@@ -1,6 +1,6 @@
-function myScript(){
-    console.log("working");
-}
+// function myScript(){
+//     console.log("working");
+// }
 
 
 
@@ -32,8 +32,10 @@ document.onkeydown = checkKey;
 
 function checkKey(e) {
     var event = window.event ? window.event : e;
-    a.push(event.key);
-    latest = event.key;
+    latest = event.key.toLowerCase();
+    if (a.indexOf(latest)<0) {
+
+    a.push(latest);
     guesses = guesses--;
 	if (latest == letter) {
 		wins++;
@@ -57,7 +59,7 @@ function checkKey(e) {
 		document.getElementById("body").innerHTML = ("<h1>The Psychic Game</h1><br><br> Guess what letter I\'m thinking of<br><br>Wins: "+wins+"<br><br>Losses: "+losses+"<br><br>Guesses Left: "+guesses+"<br><br>Your Guesses so far: "+a)
 
 	}
-
+}
 }
 
 
